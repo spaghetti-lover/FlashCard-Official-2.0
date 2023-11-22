@@ -1,17 +1,24 @@
 package main.studysession;
 
 import animatefx.animation.SlideInLeft;
+import animatefx.animation.SlideInRight;
+import javafx.animation.Animation;
+import javafx.animation.RotateTransition;
+import javafx.animation.ScaleTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Point3D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import main.player.PlayerController;
 import models.Card;
 import models.Deck;
@@ -58,6 +65,7 @@ public class StudySessionController {
             scene = new Scene(root);
             scene.getStylesheets().add("/resources/css/player.css");
             stage.setScene(scene);
+            new SlideInLeft(root).play();
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -99,6 +107,11 @@ public class StudySessionController {
 
     public void toggleAnswer() {
         showAnswer = !showAnswer;
+        //Flip card
+        RotateTransition rotateTransition = new RotateTransition(Duration.seconds(0.4), questionLabel);
+        rotateTransition.setAxis(Rotate.X_AXIS);
+        rotateTransition.setByAngle(360);
+        rotateTransition.play();
         if (showAnswer && selectedCard != null) {
             questionLabel.setText(selectedCard.getAnswer());
         } else if (selectedCard != null) {
@@ -106,24 +119,29 @@ public class StudySessionController {
         } else { // no card selected
             System.out.println("No card selected");
         }
+
     }
 
     public void toggleNext() {
         if (currentCardIndex <= deck.cardsSize() - 1) {
             currentCardIndex++;
+            new SlideInRight(questionLabel).play();
             initStudySession(deck, currentCardIndex);
         } else {
             System.out.println("Reached the end of the deck");
         }
+
     }
 
     public void togglePrev() {
         if (currentCardIndex > 0) {
             currentCardIndex--;
+            new SlideInLeft(questionLabel).play();
             initStudySession(deck, currentCardIndex);
         } else {
             System.out.println("No card before");
         }
     }
+
 
 }

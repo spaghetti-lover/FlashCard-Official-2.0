@@ -41,11 +41,11 @@
                   </SplitPane>
                   <ButtonBar layoutX="266.0" layoutY="536.0" prefHeight="64.0" prefWidth="400.0">
                      <buttons>
-                        <Button fx:id="toggleAnswerBtn" mnemonicParsing="false" onAction="#toggleAnswer" prefHeight="36.0" prefWidth="148.0" text="Show answer">
+                        <Button fx:id="toggleAnswerBtn" mnemonicParsing="false" onAction="#toggleAnswer" prefHeight="36.0" prefWidth="148.0" stylesheets="@../css/player.css" text="Show answer" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font></Button>
-                        <Button fx:id="StudySession" mnemonicParsing="false" onAction="#toggleStudySession" prefHeight="36.0" prefWidth="148.0" text="Next (WIP)">
+                        <Button fx:id="StudySession" mnemonicParsing="false" onAction="#toggleStudySession" prefHeight="36.0" prefWidth="148.0" stylesheets="@../css/player.css" text="Next (WIP)" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font></Button>
@@ -55,29 +55,29 @@
             </AnchorPane>
          </items>
       </SplitPane>
-      <ButtonBar layoutX="452.0" layoutY="48.0" prefHeight="64.0" prefWidth="640.0" AnchorPane.rightAnchor="108.0">
+      <ButtonBar layoutX="452.0" layoutY="48.0" prefHeight="64.0" prefWidth="640.0" stylesheets="@../css/player.css" AnchorPane.rightAnchor="108.0">
          <buttons>
-            <Button fx:id="backToMain" mnemonicParsing="false" onAction="#switchToMain" prefHeight="36.0" prefWidth="148.0" text="Back">
+            <Button fx:id="backToMain" mnemonicParsing="false" onAction="#switchToMain" prefHeight="36.0" prefWidth="148.0" text="Back" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font></Button>
-            <Button mnemonicParsing="false" onAction="#onDeleteCard" prefHeight="36.0" prefWidth="148.0" text="Delete">
+            <Button mnemonicParsing="false" onAction="#onDeleteCard" prefHeight="36.0" prefWidth="148.0" text="Delete" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font></Button>
-            <Button fx:id="editCard" mnemonicParsing="false" onAction="#switchToEditor" prefHeight="36.0" prefWidth="148.0" text="Edit">
+            <Button fx:id="editCard" mnemonicParsing="false" onAction="#switchToEditor" prefHeight="36.0" prefWidth="148.0" text="Edit" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font></Button>
-            <Button fx:id="addCard" mnemonicParsing="false" onAction="#addCardToDeck" prefHeight="36.0" prefWidth="148.0" text="Add Card">
+            <Button fx:id="addCard" mnemonicParsing="false" onAction="#addCardToDeck" prefHeight="36.0" prefWidth="148.0" text="Add Card" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font></Button>
          </buttons>
       </ButtonBar>
-      <Label fx:id="playerTitle" layoutX="61.0" layoutY="56.0" prefHeight="36.0" prefWidth="360.0" text="Deck Title here">
+      <Label id="deck_title" fx:id="playerTitle" layoutX="107.0" layoutY="56.0" prefHeight="36.0" prefWidth="314.0" styleClass="deck_title" stylesheets="@../css/player.css" text="Deck Title here" textFill="WHITE">
          <font>
-            <Font size="24.0" />
+            <Font name="Century Gothic Bold" size="30.0" />
          </font>
       </Label>
    </children>

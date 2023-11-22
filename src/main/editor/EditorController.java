@@ -2,6 +2,7 @@ package main.editor;
 
 import java.util.ArrayList;
 
+import animatefx.animation.SlideInLeft;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,6 +51,7 @@ public class EditorController {
             scene = new Scene(root);
             scene.getStylesheets().add("/resources/css/player.css");
             stage.setScene(scene);
+            new SlideInLeft(root).play();
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

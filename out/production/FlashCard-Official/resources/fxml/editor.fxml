@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.editor.EditorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.editor.EditorController">
    <children>
       <SplitPane layoutX="63.0" layoutY="97.0" prefHeight="633.0" prefWidth="1075.0">
         <items>
@@ -62,9 +62,9 @@
         </items>
       </SplitPane>
       <ButtonBar layoutX="416.0" layoutY="6.0" prefHeight="40.0" prefWidth="122.0" AnchorPane.rightAnchor="24.0" />
-      <Label fx:id="mainLabel" layoutX="63.0" layoutY="28.0" prefHeight="36.0" prefWidth="360.0" text="Flashcards- Editor">
+      <Label fx:id="mainLabel" layoutX="63.0" layoutY="28.0" prefHeight="36.0" prefWidth="360.0" text="Flashcards- Editor" textFill="WHITE">
          <font>
-            <Font size="24.0" />
+            <Font name="Century Gothic Bold" size="25.0" />
          </font>
       </Label>
    </children>

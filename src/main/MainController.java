@@ -2,6 +2,7 @@ package main;
 
 import java.util.ArrayList;
 
+import animatefx.animation.SlideInRight;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -136,6 +137,7 @@ public class MainController {
                 scene = new Scene(root);
                 scene.getStylesheets().add("/resources/css/player.css");
                 stage.setScene(scene);
+                new SlideInRight(root).play();
                 stage.show();
             } catch (Exception e) {
                 e.printStackTrace();

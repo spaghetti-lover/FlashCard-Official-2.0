@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -14,88 +13,103 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
    <children>
-      <ListView fx:id="deckList" layoutX="158.0" layoutY="193.0" prefHeight="607.0" prefWidth="886.0" style="-fx-background-color: #ECEFF1;" styleClass="deck-list" />
-      <Label layoutY="-1.0" prefHeight="194.0" prefWidth="158.0" style="-fx-border-radius: 8; -fx-background-color: #00BFFF;" styleClass="logo-label" text="FlashCards" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-         <font>
-            <Font size="24.0" />
-         </font>
-         <padding>
-            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-         </padding>
-      </Label>
-      <ButtonBar layoutX="486.0" layoutY="13.0" prefHeight="64.0" prefWidth="640.0" AnchorPane.rightAnchor="90.0" />
-      <HBox alignment="CENTER_LEFT" layoutX="158.0" prefHeight="100.0" prefWidth="726.0">
+      <ListView fx:id="deckList" layoutX="240.0" layoutY="192.0" prefHeight="607.0" prefWidth="806.0" style="-fx-background-color: #ECEFF1;" styleClass="deck-list" />
+      <VBox layoutX="215.0" layoutY="97.0" />
+      <VBox prefHeight="800.0" prefWidth="220.0">
          <children>
-            <Text fill="#465879" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="55.0" />
-               </HBox.margin>
-            </Text>
-         </children>
-      </HBox>
-      <VBox layoutX="176.0" layoutY="100.0">
-         <children>
-            <Text fill="#575f72" strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR DECKS" wrappingWidth="116.64828538894653">
-               <VBox.margin>
-                  <Insets left="55.0" top="26.0" />
-               </VBox.margin>
-               <font>
-                  <Font name="Segoe UI" size="15.0" />
-               </font>
-            </Text>
-            <Line endX="42.0" stroke="#575f72" strokeLineCap="ROUND" strokeWidth="4.0">
-               <VBox.margin>
-                  <Insets left="55.0" top="12.0" />
-               </VBox.margin>
-            </Line>
-         </children>
-      </VBox>
-      <VBox fx:id="OptionList" layoutX="-2.0" layoutY="193.0" prefHeight="607.0" prefWidth="158.0" style="-fx-background-color: #475A7C;">
-         <children>
-            <HBox>
+            <AnchorPane fx:id="menu_pane" prefHeight="800.0" prefWidth="234.0" styleClass="menu_pane" stylesheets="@../css/main.css">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onDeleteDeck" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #475A7C;" text="Delete">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-            <VBox>
-               <children>
-                  <HBox>
+                  <Pane id="inner_panel" fx:id="inner_panel" layoutX="10.0" layoutY="39.0" prefHeight="46.0" prefWidth="189.0" styleClass="inner_panel" stylesheets="@../css/main.css">
                      <children>
-                        <Button fx:id="addDeck" mnemonicParsing="false" onAction="#addDeck" prefHeight="36.0" prefWidth="179.0" style="-fx-background-color: #475A7C;" text="Add deck">
+                        <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FlashCards" wrappingWidth="108.38306617736816">
                            <font>
-                              <Font size="20.0" />
+                              <Font name="Century Gothic Bold" size="20.0" />
                            </font>
-                        </Button>
+                        </Text>
+                        <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="156.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/D:/Project%20ltinh/FlashCard-Official/images/3dots.png" />
+                           </image>
+                        </ImageView>
                      </children>
-                  </HBox>
-               </children>
-            </VBox>
-            <HBox>
-               <children>
-                  <Button mnemonicParsing="false" onAction="#onEditDeck" prefHeight="43.0" prefWidth="157.0" style="-fx-background-color: #475A7C;" text="Edit">
+                  </Pane>
+                  <Button id="btn" layoutX="14.0" layoutY="192.0" mnemonicParsing="false" onAction="#onShowDeck" prefHeight="43.0" prefWidth="190.0" styleClass="btn" stylesheets="@../css/main.css" text="Show" textFill="WHITE">
                      <font>
-                        <Font size="20.0" />
+                        <Font name="Century Gothic Bold" size="20.0" />
                      </font>
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/D:/Project%20ltinh/FlashCard-Official/images/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="15.0" layoutY="271.0" mnemonicParsing="false" onAction="#onEditDeck" prefHeight="43.0" prefWidth="190.0" styleClass="btn" stylesheets="@../css/main.css" text="Edit" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/D:/Project%20ltinh/FlashCard-Official/images/wrench.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="btn" fx:id="addDeck" layoutX="15.0" layoutY="348.0" mnemonicParsing="false" onAction="#addDeck" prefHeight="43.0" prefWidth="190.0" styleClass="btn" stylesheets="@../css/main.css" text="Add deck" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/D:/Project%20ltinh/FlashCard-Official/images/sign.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="btn" layoutX="15.0" layoutY="417.0" mnemonicParsing="false" onAction="#onDeleteDeck" prefHeight="43.0" prefWidth="190.0" styleClass="btn" stylesheets="@../css/main.css" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/D:/Project%20ltinh/FlashCard-Official/images/trash-bin.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                </children>
-            </HBox>
-            <HBox>
-               <children>
-                  <Button mnemonicParsing="false" onAction="#onShowDeck" prefHeight="43.0" prefWidth="158.0" style="-fx-background-color: #475A7C;" text="Show">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
+            </AnchorPane>
          </children>
       </VBox>
+      <Text fill="#465879" layoutX="239.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" wrappingWidth="277.08807349205017">
+         <font>
+            <Font name="System Bold" size="50.0" />
+         </font>
+      </Text>
+      <Text fill="#575f72" layoutX="239.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR DECKS" wrappingWidth="116.64828538894653">
+         <font>
+            <Font name="Segoe UI" size="20.0" />
+         </font>
+      </Text>
+      <Line endX="42.0" layoutX="241.0" layoutY="182.0" stroke="#575f72" strokeLineCap="ROUND" strokeWidth="4.0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="980.0" layoutY="22.0" opacity="0.56" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/D:/Project%20ltinh/FlashCard-Official/images/dictionary.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="98.0" layoutX="1089.0" layoutY="184.0" opacity="0.56" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/D:/Project%20ltinh/FlashCard-Official/images/book.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="55.0" layoutX="1075.0" layoutY="22.0" opacity="0.56" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/D:/Project%20ltinh/FlashCard-Official/images/pencil.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

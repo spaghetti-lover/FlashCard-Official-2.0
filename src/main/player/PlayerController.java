@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 import animatefx.animation.SlideInLeft;
+import animatefx.animation.SlideInRight;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -59,6 +60,7 @@ public class PlayerController {
             scene = new Scene(root);
             scene.getStylesheets().add("/resources/css/main.css");
             stage.setScene(scene);
+            new SlideInLeft(root).play();
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,6 +81,7 @@ public class PlayerController {
                 scene = new Scene(root);
                 scene.getStylesheets().add("/resources/css/editor.css");
                 stage.setScene(scene);
+                new SlideInRight(root).play();
                 stage.show();
             } catch (Exception e) {
                 System.out.println("Error loading editor.fxml");
@@ -101,6 +104,7 @@ public class PlayerController {
             scene = new Scene(root);
             scene.getStylesheets().add("/resources/css/editor.css");
             stage.setScene(scene);
+            new SlideInRight(root).play();
             stage.show();
         } catch (Exception e) {
             System.out.println("Error loading editor.fxml");
@@ -220,6 +224,7 @@ public class PlayerController {
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
+            new SlideInRight(root).play();
             stage.show();
 
         } catch (Exception e) {

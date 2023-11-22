@@ -1,5 +1,6 @@
 package main;
 
+import animatefx.animation.SlideInRight;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,7 @@ public class Main extends Application {
             Scene scene = new Scene(root);
             scene.getStylesheets().add("/resources/css/main.css");
             primaryStage.setScene(scene);
+            new SlideInRight(root).play();
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
