@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
+   <children>
+      <ListView fx:id="deckList" layoutX="158.0" layoutY="193.0" prefHeight="607.0" prefWidth="886.0" style="-fx-background-color: #ECEFF1;" styleClass="deck-list" />
+      <Label layoutY="-1.0" prefHeight="194.0" prefWidth="158.0" style="-fx-border-radius: 8; -fx-background-color: #00BFFF;" styleClass="logo-label" text="FlashCards" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Label>
+      <ButtonBar layoutX="486.0" layoutY="13.0" prefHeight="64.0" prefWidth="640.0" AnchorPane.rightAnchor="90.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="158.0" prefHeight="100.0" prefWidth="726.0">
+         <children>
+            <Text fill="#465879" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="55.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <VBox layoutX="176.0" layoutY="100.0">
+         <children>
+            <Text fill="#575f72" strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR DECKS" wrappingWidth="116.64828538894653">
+               <VBox.margin>
+                  <Insets left="55.0" top="26.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Segoe UI" size="15.0" />
+               </font>
+            </Text>
+            <Line endX="42.0" stroke="#575f72" strokeLineCap="ROUND" strokeWidth="4.0">
+               <VBox.margin>
+                  <Insets left="55.0" top="12.0" />
+               </VBox.margin>
+            </Line>
+         </children>
+      </VBox>
+      <VBox fx:id="OptionList" layoutX="-2.0" layoutY="193.0" prefHeight="607.0" prefWidth="158.0" style="-fx-background-color: #475A7C;">
+         <children>
+            <HBox>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onDeleteDeck" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #475A7C;" text="Delete">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <Button fx:id="addDeck" mnemonicParsing="false" onAction="#addDeck" prefHeight="36.0" prefWidth="179.0" style="-fx-background-color: #475A7C;" text="Add deck">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onEditDeck" prefHeight="43.0" prefWidth="157.0" style="-fx-background-color: #475A7C;" text="Edit">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onShowDeck" prefHeight="43.0" prefWidth="158.0" style="-fx-background-color: #475A7C;" text="Show">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
