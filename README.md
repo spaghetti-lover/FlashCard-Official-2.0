@@ -1,4 +1,4 @@
-# Flashcards - JavaFX , Scene Builder, Serialized Persistence JAVA IO API
+# Flashcards - Build with Javafx
 
 #### Main Scene that will show all the Decks in Flash Card App
 
