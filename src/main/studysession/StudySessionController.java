@@ -1,16 +1,10 @@
 package main.studysession;
 
-import animatefx.animation.SlideInLeft;
-import animatefx.animation.SlideInRight;
-import javafx.animation.Animation;
+import animatefx.animation.*;
 import javafx.animation.RotateTransition;
-import javafx.animation.ScaleTransition;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Point3D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -24,10 +18,6 @@ import models.Card;
 import models.Deck;
 import services.DataService;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.concurrent.Semaphore;
-
 public class StudySessionController {
     private Parent root;
     private Stage stage;
@@ -36,11 +26,9 @@ public class StudySessionController {
 
 
     private Deck deck;
-    private Card question;
-    private Card answer;
     private DataService ds = DataService.getInstance();
 
-    //Danh dau xem khi nao hien cau tra loi
+    //Flag the answer
     private boolean showAnswer = false;
     private Card selectedCard;
     private int currentCardIndex;
@@ -71,6 +59,25 @@ public class StudySessionController {
             e.printStackTrace();
         }
 
+    }
+
+    public void switchToEndSession(ActionEvent event) {
+        System.out.println("Switch to end session");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/endsession.fxml"));
+        try {
+            root = loader.load();
+            EndSessionController controller = loader.getController();
+            controller.initEndSession(this.deck);
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            scene.getStylesheets().add("/resources/css/studysession.css");
+            stage.setScene(scene);
+            new BounceInRight(root).play();
+            stage.show();
+        } catch (Exception e) {
+            System.out.println("Error loading endsession.fxml");
+            e.printStackTrace();
+        }
     }
 
     public void initStudySession(Deck deck) {
@@ -122,13 +129,13 @@ public class StudySessionController {
 
     }
 
-    public void toggleNext() {
-        if (currentCardIndex <= deck.cardsSize() - 1) {
+    public void toggleNext(ActionEvent event) {
+        if (currentCardIndex < deck.cardsSize() - 1) {
             currentCardIndex++;
             new SlideInRight(questionLabel).play();
             initStudySession(deck, currentCardIndex);
         } else {
-            System.out.println("Reached the end of the deck");
+            switchToEndSession(event);
         }
 
     }

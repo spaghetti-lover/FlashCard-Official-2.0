@@ -48,3 +48,30 @@
     -fx-border-style: solid;
     -fx-border-color: #353A56;
 }
+
+.done-bar {
+    -fx-background-color: #18D794;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #18D794;
+}
+
+.unfinished-bar {
+    -fx-background-color: #D057004D;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #D057004D;
+}
+
+.need-to-finish-bar {
+    -fx-background-color: #2E3856;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #2E3856;
+}

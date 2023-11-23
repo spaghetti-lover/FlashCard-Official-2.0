@@ -35,10 +35,6 @@ public class EditorController {
     @FXML
     Label mainLabel;
 
-    public void backToDeck(ActionEvent event) {
-        // todo implement back to deck from the editor
-    }
-
     // todo on Back click from editor, go back to PlayerController
     public void switchToPlayer(ActionEvent event) {
         System.out.println("Switch to player");
